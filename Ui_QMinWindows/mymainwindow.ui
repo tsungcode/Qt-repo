@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MyMainWindow</class>
+ <widget class="QMainWindow" name="MyMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MyMainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="file">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="New"/>
+    <addaction name="separator"/>
+    <addaction name="Open"/>
+    <addaction name="separator"/>
+    <addaction name="Close_2"/>
+   </widget>
+   <widget class="QMenu" name="edit">
+    <property name="title">
+     <string>编辑</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="tool">
+    <property name="title">
+     <string>工具</string>
+    </property>
+   </widget>
+   <addaction name="file"/>
+   <addaction name="edit"/>
+   <addaction name="tool"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="New">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/image/23.ico</normaloff>:/image/23.ico</iconset>
+   </property>
+   <property name="text">
+    <string>新建</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="Open">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/image/14.ico</normaloff>:/image/14.ico</iconset>
+   </property>
+   <property name="text">
+    <string>打开</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="Close_2">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/image/1.ico</normaloff>:/image/1.ico</iconset>
+   </property>
+   <property name="text">
+    <string>关闭</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
