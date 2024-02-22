@@ -7,6 +7,7 @@
 #include <QDockWidget> //铆接部件
 #include <QTextEdit>
 #include <QLabel>
+#include <QPixmap>
 
 MyMainWindow::MyMainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -33,6 +34,7 @@ MyMainWindow::MyMainWindow(QWidget *parent)
     menuBar->addMenu(tool);
     menuBar->addMenu(help);
     menuBar->addMenu(QString("直接添加菜单")); //直接添加
+    menuBar->addMenu(QIcon(":/image/9.ico"),QString("直接加载图标和菜单")); //加载菜单ico图标
 
     //5、创建菜单项 QAction
     QAction *New=new QAction("新建",this);   //新建菜单项
@@ -48,11 +50,20 @@ MyMainWindow::MyMainWindow(QWidget *parent)
     file->addAction(Close);
     file->addSeparator();    //菜单项直接分割线
     file->addAction(QString("直接添加菜单项"));
+    file->addAction(QIcon(":/image/7.ico"),QString("直接加载图标和菜单")); //菜单项加载ico图标
 
     //7、菜单项QAction设置快捷方式
    New->setShortcut(QKeySequence(Qt::CTRL+Qt::Key_N)); //给菜单项添加快捷键的第一种写法
    Open->setShortcut(QKeySequence(tr("CTRL+O")));      //给菜单项添加快捷键的第二种写法
    Close->setShortcut(QKeySequence(QKeySequence::Close));//给菜单项添加快捷键的第三种写法
+
+   //菜单项添加图标
+   QPixmap pix;               //创建图片控件
+   pix.load(":/image/4.ico"); //加载图片
+   New->setIcon(QIcon(pix));  //设置菜单项ico
+   Open->setIcon(QIcon(":/image/5.ico")); //菜单项直接添加ico方法
+   Close->setIcon(QIcon(":/image/6.ico"));
+
 
    //8、菜单项QAction的信号和槽使用
    connect(New,&QAction::triggered,[=](){
@@ -71,6 +82,7 @@ MyMainWindow::MyMainWindow(QWidget *parent)
     QAction *newTool=new QAction("新建",this);
     QAction *openTool=new QAction("打开",this);
     QAction *quitTool=new QAction("退出",this);
+    newTool->setIcon(QIcon(":/image/3.ico"));   //工具项加载ico图标
 
     //4、将工具项添加到工具栏
     toolBar->addAction(newTool);
