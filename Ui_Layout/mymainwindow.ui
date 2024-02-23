@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MyMainWindow</class>
+ <widget class="QMainWindow" name="MyMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Ui Layoyt</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="res.qrc">
+    <normaloff>:/image/14.ico</normaloff>:/image/14.ico</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="widget_4" native="true">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>0</y>
+      <width>276</width>
+      <height>156</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_4">
+     <item row="0" column="0">
+      <widget class="QWidget" name="widget" native="true">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>用户名：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_Name"/>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QWidget" name="widget_2" native="true">
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="1" column="0">
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="lineEdit_Passward">
+            <property name="echoMode">
+             <enum>QLineEdit::Password</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>密  码：</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QWidget" name="widget_3" native="true">
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="pushButton_login">
+          <property name="text">
+           <string>登录</string>
+          </property>
+          <property name="icon">
+           <iconset resource="res.qrc">
+            <normaloff>:/image/1.ico</normaloff>:/image/1.ico</iconset>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="pushButton_quit">
+          <property name="text">
+           <string>退出</string>
+          </property>
+          <property name="icon">
+           <iconset resource="res.qrc">
+            <normaloff>:/image/2.ico</normaloff>:/image/2.ico</iconset>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>160</y>
+      <width>173</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>单选框</string>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_5">
+     <item row="0" column="0">
+      <widget class="QRadioButton" name="radioButton_1">
+       <property name="text">
+        <string>男</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QRadioButton" name="radioButton_2">
+       <property name="text">
+        <string>女</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QRadioButton" name="radioButton_3">
+       <property name="text">
+        <string>保密</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPlainTextEdit" name="plainTextEdit">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>250</y>
+      <width>171</width>
+      <height>71</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>170</y>
+      <width>225</width>
+      <height>54</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>改变颜色</string>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_6">
+     <item row="0" column="0">
+      <widget class="QRadioButton" name="radioButton_red">
+       <property name="text">
+        <string>red</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QRadioButton" name="radioButton_green">
+       <property name="text">
+        <string>green</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QRadioButton" name="radioButton_yellow">
+       <property name="text">
+        <string>yellow</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QListWidget" name="listWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>330</y>
+      <width>171</width>
+      <height>91</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTreeWidget" name="treeWidget">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>230</y>
+      <width>501</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <column>
+     <property name="text">
+      <string>英雄分类</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>英雄名</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>事迹</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>语录</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>备注</string>
+     </property>
+    </column>
+    <item>
+     <property name="text">
+      <string>水浒英雄</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <item>
+      <property name="text">
+       <string>哥哥宋公明</string>
+      </property>
+      <property name="text">
+       <string>及时雨宋公明</string>
+      </property>
+      <property name="text">
+       <string>替天行道</string>
+      </property>
+      <property name="text">
+       <string>招安某公名</string>
+      </property>
+     </item>
+    </item>
+    <item>
+     <property name="text">
+      <string>红楼英雄</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <item>
+      <property name="text">
+       <string>林黛玉</string>
+      </property>
+      <property name="text">
+       <string>冷月葬花魂</string>
+      </property>
+      <property name="text">
+       <string>林怼怼</string>
+      </property>
+      <property name="text">
+       <string>天上掉下个林妹妹</string>
+      </property>
+      <property name="text">
+       <string>无话可说</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>贾宝玉</string>
+      </property>
+      <property name="text">
+       <string>莫失莫忘仙寿恒昌</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="text">
+       <string>林妹妹</string>
+      </property>
+      <property name="text">
+       <string>假宝玉</string>
+      </property>
+     </item>
+    </item>
+    <item>
+     <property name="text">
+      <string>三国英雄</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <item>
+      <property name="text">
+       <string>刘备</string>
+      </property>
+      <property name="text">
+       <string>关关难过，关关过，事事难成事事成</string>
+      </property>
+      <property name="text">
+       <string>关二爷牛掰</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+    </item>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>10</y>
+      <width>391</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <row>
+     <property name="text">
+      <string>1</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>2</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>3</string>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>序号</string>
+     </property>
+     <property name="font">
+      <font>
+       <underline>true</underline>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>学号</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>姓名</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>性别</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>地址</string>
+     </property>
+    </column>
+    <item row="0" column="0">
+     <property name="text">
+      <string>1001</string>
+     </property>
+    </item>
+    <item row="0" column="1">
+     <property name="text">
+      <string>18</string>
+     </property>
+    </item>
+    <item row="0" column="2">
+     <property name="text">
+      <string>关羽</string>
+     </property>
+    </item>
+    <item row="0" column="3">
+     <property name="text">
+      <string>男</string>
+     </property>
+    </item>
+    <item row="0" column="4">
+     <property name="text">
+      <string>山西</string>
+     </property>
+    </item>
+    <item row="1" column="0">
+     <property name="text">
+      <string>1002</string>
+     </property>
+    </item>
+    <item row="1" column="1">
+     <property name="text">
+      <string>19</string>
+     </property>
+    </item>
+    <item row="1" column="2">
+     <property name="text">
+      <string>张飞</string>
+     </property>
+    </item>
+    <item row="1" column="3">
+     <property name="text">
+      <string>女</string>
+     </property>
+    </item>
+    <item row="1" column="4">
+     <property name="text">
+      <string>山东</string>
+     </property>
+    </item>
+    <item row="2" column="0">
+     <property name="text">
+      <string>1003</string>
+     </property>
+    </item>
+    <item row="2" column="1">
+     <property name="text">
+      <string>20</string>
+     </property>
+    </item>
+    <item row="2" column="2">
+     <property name="text">
+      <string>刘备</string>
+     </property>
+    </item>
+    <item row="2" column="3">
+     <property name="text">
+      <string>未知</string>
+     </property>
+    </item>
+    <item row="2" column="4">
+     <property name="text">
+      <string>河北</string>
+     </property>
+    </item>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>700</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
