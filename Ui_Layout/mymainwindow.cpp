@@ -80,6 +80,7 @@ MyMainWindow::MyMainWindow(QWidget *parent)
         qDebug()<<"行坐标："<<row<<"\t"<<"列坐标"<<col<<endl;
     });
 
+
 }
 
 MyMainWindow::~MyMainWindow()

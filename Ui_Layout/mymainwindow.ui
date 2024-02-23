@@ -365,6 +365,11 @@
       <string>3</string>
      </property>
     </row>
+    <row>
+     <property name="text">
+      <string>新建行</string>
+     </property>
+    </row>
     <column>
      <property name="text">
       <string>序号</string>
@@ -468,6 +473,51 @@
     <item row="2" column="4">
      <property name="text">
       <string>河北</string>
+     </property>
+    </item>
+    <item row="3" column="0">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/image/15.ico</normaloff>:/image/15.ico</iconset>
+     </property>
+    </item>
+    <item row="3" column="1">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/image/16.ico</normaloff>:/image/16.ico</iconset>
+     </property>
+    </item>
+    <item row="3" column="2">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/image/17.ico</normaloff>:/image/17.ico</iconset>
+     </property>
+    </item>
+    <item row="3" column="3">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/image/13.ico</normaloff>:/image/13.ico</iconset>
+     </property>
+    </item>
+    <item row="3" column="4">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/image/1.ico</normaloff>:/image/1.ico</iconset>
      </property>
     </item>
    </widget>
