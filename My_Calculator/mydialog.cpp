@@ -19,6 +19,7 @@ MyDialog::MyDialog(QWidget *parent)
     //显示结果
     this->m_editZ=new QLineEdit(this);
     this->m_editZ->setAlignment(Qt::AlignCenter);
+    this->m_editZ->setReadOnly(true); //设置为只读
 
     //操作符
     this->m_label=new QLabel("+",this);
