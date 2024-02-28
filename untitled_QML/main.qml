@@ -1,6 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Window 2.12
 
+
 /*
   *
   *
@@ -150,96 +151,107 @@ Window {
 /////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////
-
 Window {
-    id:wind
+    id: wind
     visible: true
     width: 640
     height: 480
     title: qsTr("Hello World")
 
-    property bool isClicked01:false  //QML使用property关键字定义属性
-    property bool isClicked02:false  //QML使用property关键字定义属性
-    property bool isClicked03:false  //QML使用property关键字定义属性
+    property bool isClicked01: false //QML使用property关键字定义属性
+    property bool isClicked02: false //QML使用property关键字定义属性
+    property bool isClicked03: false //QML使用property关键字定义属性
 
     //设置三个按钮
-    Row
-    {
+    Row {
         //anchors.centerIn: parent  //将子控件放在父控件中心
-        x:160;y:0
-        spacing: 20   //间距
-        Rectangle{
-            id:rect1
+        x: 160
+        y: 0
+        spacing: 20 //间距
+        Rectangle {
+            id: rect1
             width: 100
             height: 40
             color: "red"
-            gradient: Gradient   //渐变色
+            gradient: Gradient //渐变色
             {
-                GradientStop { position:0.0;color:"lightsteelblue"}
-                GradientStop { position:1.0;color:"slategray"}
+                GradientStop {
+                    position: 0.0
+                    color: "lightsteelblue"
+                }
+                GradientStop {
+                    position: 1.0
+                    color: "slategray"
+                }
             }
             //加外边框
             border.color: "red"
             border.width: 5
-            radius: 10  //半径
+            radius: 10 //半径
             //鼠标点击
-            MouseArea  //鼠标点击
+            MouseArea //鼠标点击
             {
                 anchors.fill: parent
-                onClicked:
-                {
-                    isClicked01=!isClicked01;
-                    if(isClicked01)
-                    {
-                        text4.visible=true;
-                        wind.color="red";  //将窗口颜色改为红色
+                onClicked: {
+                    isClicked01 = !isClicked01
+                    if (isClicked01) {
+                        text4.visible = true
+                        wind.color = "red" //将窗口颜色改为红色
+                    } else {
+                        text4.visible = flase
+                        wind.color = "green" //将窗口颜色改为白色
                     }
-                    else
-                    {
-                        text4.visible=flase;
-                        wind.color="green"; //将窗口颜色改为白色
-                    }
-                }//onClicked end
-            }//MouseArea end
-
-
-        }//rect1 end
-        Rectangle{
-            id:rect2
+                } //onClicked end
+            } //MouseArea end
+        } //rect1 end
+        Rectangle {
+            id: rect2
             width: 100
             height: 40
             color: "red"
-            gradient: Gradient   //渐变色
+            gradient: Gradient //渐变色
             {
-                GradientStop { position:0.0;color:"lightsteelblue"}
-                GradientStop { position:1.0;color:"slategray"}
+                GradientStop {
+                    position: 0.0
+                    color: "lightsteelblue"
+                }
+                GradientStop {
+                    position: 1.0
+                    color: "slategray"
+                }
             }
             //加外边框
             border.color: "red"
             border.width: 5
-            radius: 10  //半径
-        }//rect2 end
-        Rectangle{
-            id:rect3
+            radius: 10 //半径
+        } //rect2 end
+        Rectangle {
+            id: rect3
             width: 100
             height: 40
             color: "red"
-            gradient: Gradient   //渐变色
+            gradient: Gradient //渐变色
             {
-                GradientStop { position:0.0;color:"lightsteelblue"}
-                GradientStop { position:1.0;color:"slategray"}
+                GradientStop {
+                    position: 0.0
+                    color: "lightsteelblue"
+                }
+                GradientStop {
+                    position: 1.0
+                    color: "slategray"
+                }
             }
             //加外边框
             border.color: "red"
             border.width: 5
-            radius: 10  //半径
-        }//rect3 end
-    }//row end
+            radius: 10 //半径
+        } //rect3 end
+    } //row end
     ////////////////////////////按钮上显示文字////////////////////////////////
-    Row
-    {
-        x:185;y:10
-        spacing:70
+    Row {
+        x: 185
+        y: 10
+        spacing: 70
         Text {
             id: text1
             text: qsTr("按钮1")
@@ -261,12 +273,11 @@ Window {
             font.family: "Ubuntu"
             font.pixelSize: 20
         }
-
-    }//row end
+    } //row end
     ////////////////////////////////设置文本///////////////////////////////////
-    Column
-    {
-        x:50;y:50
+    Column {
+        x: 50
+        y: 50
         spacing: 20
         Text {
             id: text4
@@ -274,7 +285,7 @@ Window {
             color: "#303030"
             font.family: "Ubuntu"
             font.pixelSize: 28
-            visible: false  //设置默认不可见，点击按钮出现
+            visible: false //设置默认不可见，点击按钮出现
         }
         Text {
             id: text5
@@ -282,7 +293,7 @@ Window {
             color: "#303030"
             font.family: "Ubuntu"
             font.pixelSize: 28
-            visible: false  //设置默认不可见，点击按钮出现
+            visible: false //设置默认不可见，点击按钮出现
         }
         Text {
             id: text6
@@ -290,75 +301,96 @@ Window {
             color: "#303030"
             font.family: "Ubuntu"
             font.pixelSize: 28
-            visible: false  //设置默认不可见，点击按钮出现
+            visible: false //设置默认不可见，点击按钮出现
         }
-
-    }//Column end
+    } //Column end
     ////////////////////////////////设置三个圆形////////////////////////////////
-    Row
-    {
-        x:150;y:175
-        spacing: 20   //间距
-        Rectangle{
-            id:rect4
+    Row {
+        x: 150
+        y: 175
+        spacing: 20 //间距
+        Rectangle {
+            id: rect4
             width: 100
-            height:width
-            radius: width/2  //半径
+            height: width
+            radius: width / 2 //半径
             color: "red"
-            gradient: Gradient   //渐变色
+            gradient: Gradient //渐变色
             {
-                GradientStop { position:0.0;color:"lightsteelblue"}
-                GradientStop { position:1.0;color:"slategray"}
+                GradientStop {
+                    position: 0.0
+                    color: "lightsteelblue"
+                }
+                GradientStop {
+                    position: 1.0
+                    color: "slategray"
+                }
             }
             //外边框
             border.color: "red"
             border.width: 5
-        }//rect1 end
-        Rectangle{
-            id:rect5
+        } //rect1 end
+        Rectangle {
+            id: rect5
             width: 100
             height: width
-            radius: width/2  //半径
+            radius: width / 2 //半径
             color: "red"
-            gradient: Gradient   //渐变色
+            gradient: Gradient //渐变色
             {
-                GradientStop { position:0.0;color:"lightsteelblue"}
-                GradientStop { position:1.0;color:"slategray"}
+                GradientStop {
+                    position: 0.0
+                    color: "lightsteelblue"
+                }
+                GradientStop {
+                    position: 1.0
+                    color: "slategray"
+                }
             }
             //加外边框
             border.color: "red"
             border.width: 5
-        }//rect2 end
-        Rectangle{
-            id:rect6
+        } //rect2 end
+        Rectangle {
+            id: rect6
             width: 100
             height: width
-            radius: width/2  //半径
+            radius: width / 2 //半径
             color: "red"
-            gradient: Gradient   //渐变色
+            gradient: Gradient //渐变色
             {
-                GradientStop { position:0.0;color:"lightsteelblue"}
-                GradientStop { position:1.0;color:"slategray"}
+                GradientStop {
+                    position: 0.0
+                    color: "lightsteelblue"
+                }
+                GradientStop {
+                    position: 1.0
+                    color: "slategray"
+                }
             }
             //加外边框
             border.color: "red"
             border.width: 5
-        }//rect3 end
-
-    }//row end
+        } //rect3 end
+    } //row end
     ////////////////////////最后一个矩形////////////////////////////
-    Rectangle{
-        x:250;y:300
-        id:rect7
+    Rectangle {
+        x: 250
+        y: 300
+        id: rect7
         width: 150
-        height:150
+        height: 150
         color: "red"
-        gradient: Gradient   //渐变色
+        gradient: Gradient //渐变色
         {
-            GradientStop { position:0.0;color:"lightsteelblue"}
-            GradientStop { position:1.0;color:"slategray"}
-
+            GradientStop {
+                position: 0.0
+                color: "lightsteelblue"
+            }
+            GradientStop {
+                position: 1.0
+                color: "slategray"
+            }
         }
-    }//rect7 end
-
-}//window end
+    } //rect7 end
+} //window end
