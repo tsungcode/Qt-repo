@@ -3,13 +3,14 @@
 #include <QMessageBox>
 #include <QDebug>
 #include <QDialogButtonBox>
-
+#include <QIntValidator>
 MyDialog::MyDialog(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::MyDialog)
 {
     ui->setupUi(this);
     this->setWindowTitle("MyLogin");
+    ui->m_EditPasswd->setValidator(new QIntValidator(this)); //设置int校验
     ///////////////////////////////////////////////////////////////////////////
     //当点击Yes,OK之类发送如下信号
     connect(ui->m_buttonBox,&QDialogButtonBox::accepted,[=](){
