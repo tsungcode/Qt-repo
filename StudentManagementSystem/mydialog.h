@@ -8,6 +8,7 @@
 #include <QSqlError>       //数据库操作错误原因
 #include <QDebug>
 #include <QMessageBox>
+#include <QDoubleValidator>  //设置行编辑框只能输入数字
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MyDialog; }

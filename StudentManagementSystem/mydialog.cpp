@@ -11,6 +11,10 @@ MyDialog::MyDialog(QWidget *parent)
     this->createTable();  //创建数据库表
     this->queryTable();   //数据查询操作
     /////////////////////////
+    //输入ID和SCORE数据的校验
+    ui->ID_Edit->setValidator(new QIntValidator(this));
+    ui->Score_Edit->setValidator(new QDoubleValidator(this));
+    ////////////////////////
 }
 
 MyDialog::~MyDialog()
@@ -88,6 +92,7 @@ void MyDialog::on_sort_Button_clicked()
     ui->tableView->setModel(&this->model); //将查询的结果集更新显示在Ui控件中
 }
 /////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
 //插入
 void MyDialog::on_insert_Button_clicked()
 {
@@ -97,6 +102,23 @@ void MyDialog::on_insert_Button_clicked()
     int Id=ui->ID_Edit->text().toInt();
     QString Name=ui->Name_Edit->text();
     double Score=ui->Score_Edit->text().toDouble();
+    //************判断输入是否合法************
+    if(Id==0)
+    {
+        QMessageBox::critical(this,"Error","ID输入错误!");
+        return;
+    }
+    if(Name.isEmpty())
+    {
+        QMessageBox::critical(this,"Error","Name输入错误!");
+        return;
+    }
+    if(Score>=100||Score<0)
+    {
+        QMessageBox::critical(this,"Error","Score输入错误!");
+        return;
+    }
+    //************************************//
     //构建条插入命令
     QString str=QString("INSERT INTO student(id,name,score) VALUES(%1,'%2',%3)").arg(Id).arg(Name).arg(Score);
     //执行sql插入语句
