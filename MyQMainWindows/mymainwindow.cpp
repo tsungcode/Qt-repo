@@ -8,6 +8,8 @@
 #include <QTextEdit>
 #include <QLabel>
 #include <QPixmap>
+#include <QPushButton>
+#include <QLineEdit>
 
 MyMainWindow::MyMainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -90,6 +92,10 @@ MyMainWindow::MyMainWindow(QWidget *parent)
     toolBar->addAction(openTool);
     toolBar->addSeparator();    //工具项之间设置分割线
     toolBar->addAction(quitTool);
+
+    //工具栏添加其他项
+    toolBar->addWidget(new QPushButton("搜索"));
+    toolBar->addWidget(new QLineEdit);
 
     //5、设置工具栏是否在主窗体浮动停留，默认是可以停留
     toolBar->setFloatable(false);   //false则不可以停留
