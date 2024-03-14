@@ -18,7 +18,6 @@ MyMainWindow::MyMainWindow(QWidget *parent)
     //QChartView继承自QGraphicsVie,所以将窗口QGraphicsVie控件提升为QChartView
 
     //1、创建图表视图，ui控件已经有
-
     //2、创建图表
     QChart *chart=new QChart();
 
@@ -36,7 +35,6 @@ MyMainWindow::MyMainWindow(QWidget *parent)
     //显示格式
     valueAxisX->setLabelFormat("%d"); //整数显示
     valueAxisY->setLabelFormat("%f"); //小数显示
-
     valueAxisX->setTickCount(10);    //将X轴间隔设置为10
 
     //6、图表添加坐标轴
@@ -46,7 +44,7 @@ MyMainWindow::MyMainWindow(QWidget *parent)
 
     //7、设置图表标题,和图例
     chart->setTitle("温度与时间曲线");
-    chart->legend()->setVisible(true);//设置图例不可见
+    chart->legend()->setVisible(true);//设置图例可见
 
     //8、创建曲线对象添加点
     QSplineSeries *splineSeries=new QSplineSeries();
@@ -66,7 +64,7 @@ MyMainWindow::MyMainWindow(QWidget *parent)
     //9、图表添加曲线
     chart->addSeries(splineSeries);
 
-    //10、将曲线数据和坐标轴联系起来
+    //10、将曲线数据和坐标轴联系起来(曲线添加了数据和坐标轴关联起来)
     splineSeries->attachAxis(valueAxisX);
     splineSeries->attachAxis(valueAxisY);
 
