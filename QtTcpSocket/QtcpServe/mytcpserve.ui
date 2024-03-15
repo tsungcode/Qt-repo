@@ -35,11 +35,22 @@
         <widget class="QLineEdit" name="m_port"/>
        </item>
        <item>
-        <widget class="QPushButton" name="m_setListen">
-         <property name="text">
-          <string>启动监听服务</string>
-         </property>
-        </widget>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QPushButton" name="m_setListen">
+           <property name="text">
+            <string>启动监听服务</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="m_disconnect">
+           <property name="text">
+            <string>断开连接</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </widget>
