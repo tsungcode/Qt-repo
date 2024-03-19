@@ -71,7 +71,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: yellow;</string>
+     <string notr="true">QWidget{background-color: yellow};</string>
     </property>
    </widget>
    <widget class="QWidget" name="touming" native="true">

@@ -27,4 +27,5 @@ void MyForm::setNumber(int n)
 {
     this->num=n;
     ui->label->setText(QString::number(this->num));
+    emit this->NumberCharged();  //触发属性的信号
 }

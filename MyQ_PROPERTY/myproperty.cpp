@@ -1,7 +1,7 @@
 #include "myproperty.h"
 #include "ui_myproperty.h"
 #include <QPropertyAnimation>  //属性动画
-
+#include <QDebug>
 
 MyProperty::MyProperty(QWidget *parent)
     : QWidget(parent)
@@ -10,8 +10,9 @@ MyProperty::MyProperty(QWidget *parent)
     ui->setupUi(this);
     //////////////////////////////////////////////
     this->myform=new MyForm(this);
+    //**********************************************************************
     //myform->setProperty("number",2000);  //直接属性
-
+    //********************************************************************
     QPropertyAnimation *p=new QPropertyAnimation(myform,"number",this);  //第一个参数为目标对象，第二个参数为属性
     //开始属性动画
     p->setStartValue(1);
@@ -24,6 +25,10 @@ MyProperty::MyProperty(QWidget *parent)
 
     //开始动画
     p->start();
+
+    connect(myform,&MyForm::NumberCharged,this,[=](){
+        qDebug()<<"属性的信号";
+    });
 
     //////////////////////////////////////////////////////
     //////////////////////////////////////////////////////
@@ -40,6 +45,12 @@ MyProperty::MyProperty(QWidget *parent)
 
     //开始动画
     p1->start();
+
+
+
+    //////////////////////////////////////
+    /// 调用属性的WRITE方法
+    ui->widget->setProperty("number",5555);
 }
 
 MyProperty::~MyProperty()

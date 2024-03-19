@@ -1,5 +1,6 @@
 #include "mydialog.h"
 #include "ui_mydialog.h"
+#include <QtGlobal>
 
 MyDialog::MyDialog(QWidget *parent)
     : QDialog(parent)
