@@ -29,8 +29,8 @@
   <widget class="MyForm" name="widget" native="true">
    <property name="geometry">
     <rect>
-     <x>440</x>
-     <y>210</y>
+     <x>370</x>
+     <y>190</y>
      <width>120</width>
      <height>80</height>
     </rect>
