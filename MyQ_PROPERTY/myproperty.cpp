@@ -1,17 +1,19 @@
 #include "myproperty.h"
 #include "ui_myproperty.h"
 #include <QPropertyAnimation>  //属性动画
-
+#include <QDebug>
 
 MyProperty::MyProperty(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::MyProperty)
 {
     ui->setupUi(this);
-    //////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////
     this->myform=new MyForm(this);
+    //**********************************************************************
     //myform->setProperty("number",2000);  //直接属性
-
+    //**********************************************************************
     QPropertyAnimation *p=new QPropertyAnimation(myform,"number",this);  //第一个参数为目标对象，第二个参数为属性
     //开始属性动画
     p->setStartValue(1);
@@ -25,8 +27,12 @@ MyProperty::MyProperty(QWidget *parent)
     //开始动画
     p->start();
 
-    //////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////
+    connect(myform,&MyForm::NumberCharged,this,[=](){
+        qDebug()<<"属性的信号";
+    });
+
+    ///////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////
     //在窗口提升控件为MyForm类型后使用自定义属性实现动画
     QPropertyAnimation *p1=new QPropertyAnimation(ui->mywidget,"number",this);  //第一个参数为目标对象，第二个参数为属性
     //开始属性动画
@@ -40,6 +46,15 @@ MyProperty::MyProperty(QWidget *parent)
 
     //开始动画
     p1->start();
+
+    //////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////
+    /// 调用属性的WRITE方法
+    //*************************************
+    qDebug()<<"初始值=："<<ui->widget->number();
+    ui->widget->setProperty("number",5555);  //*******重要
+    qDebug()<<"修改后值=："<<ui->widget->number();
+    //*************************************
 }
 
 MyProperty::~MyProperty()

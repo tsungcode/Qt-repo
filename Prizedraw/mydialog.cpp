@@ -1,5 +1,6 @@
 #include "mydialog.h"
 #include "ui_mydialog.h"
+#include <QtGlobal>
 
 MyDialog::MyDialog(QWidget *parent)
     : QDialog(parent)
@@ -15,7 +16,7 @@ MyDialog::MyDialog(QWidget *parent)
     qsrand(static_cast<unsigned>(QTime::currentTime().msec()));
     //加载所有图片到图片容器中
     this->loadImage(":/image");
-    qDebug()<<"加载到图片容器中的图片个数："<<m_vecImage.size()<<endl;
+    qDebug()<<"加载到图片容器中的图片个数："<<m_vecImage.size();
 }
 
 MyDialog::~MyDialog()

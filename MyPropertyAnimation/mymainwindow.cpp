@@ -28,10 +28,10 @@ MyMainWindow::MyMainWindow(QWidget *parent)
     ///////////////////////////////////////////////////////////////////
     //2、创建颜色动画化
     //创建颜色效果对象，作用在窗体对应组件中
-    QGraphicsColorizeEffect *graphicsColorizeEffect=new QGraphicsColorizeEffect(this);//颜色效果对象
-    ui->yanse->setGraphicsEffect(graphicsColorizeEffect);
+    QGraphicsColorizeEffect *gce=new QGraphicsColorizeEffect(this);//颜色效果对象
+    ui->yanse->setGraphicsEffect(gce);
     //创建颜色动画化
-    this->propertyAnimation2=new QPropertyAnimation(graphicsColorizeEffect,"color");
+    this->propertyAnimation2=new QPropertyAnimation(gce,"color");
     //设置动画起始值
     this->propertyAnimation2->setStartValue(QColor(Qt::green));
     //设置动画结束值
@@ -41,14 +41,14 @@ MyMainWindow::MyMainWindow(QWidget *parent)
     ///////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////
     //3、创建不透明度动画
-    QGraphicsOpacityEffect *graphicsOpacityEffect=new QGraphicsOpacityEffect(this);
-    ui->touming->setGraphicsEffect(graphicsOpacityEffect);  //设置图形效果
+    QGraphicsOpacityEffect *goe=new QGraphicsOpacityEffect(this);
+    ui->touming->setGraphicsEffect(goe);  //设置图形效果
     //创建颜色动画化
-    this->propertyAnimation3=new QPropertyAnimation(graphicsOpacityEffect,"opacity");
+    this->propertyAnimation3=new QPropertyAnimation(goe,"opacity");
     //设置动画起始值
-    this->propertyAnimation3->setStartValue(0.0);
+    this->propertyAnimation3->setStartValue(1.0);  //不透明
     //设置动画结束值
-    this->propertyAnimation3->setEndValue(1.0);
+    this->propertyAnimation3->setEndValue(0.0);   //透明
     //设置动画运行时长
     this->propertyAnimation3->setDuration(5000); //5000毫秒
 }
