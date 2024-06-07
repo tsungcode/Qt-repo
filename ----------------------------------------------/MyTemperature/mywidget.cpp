@@ -60,9 +60,9 @@ void MyWidget ::drawScaleNum(QPainter *painter)
     painter->setPen(QPen(QColor(255,255,255)));
     QFontMetricsF fm(this->font());
     int radius = 200;
-    int r=(int)(radius*0.8);
+    int r=(int)(radius*0.8);  //半径160处画文字
     int Angle=45;
-    int gap = (360-Angle*2) / 10;  //27
+    int gap = (360-Angle*2) / 10;  //间隔27度
     for(int i=0; i<=10; i+=1)
     {
         int angle = 90+Angle+gap*i;                                 //角度,每隔10格子画一个刻度值
@@ -123,11 +123,12 @@ void MyWidget::drawIndicator(QPainter *painter)
     painter->save();
     QPolygon pts;
     pts.setPoints(5, -2,0, -4,30, 0,120, 4,30, 2,0);            //第一个参数是坐标的个数，记下来是坐标
-    painter->rotate(m_startAngle);          //顺时针旋转45度
+    painter->rotate(m_startAngle);          //顺时针旋转45度指针指向刻度0位置
+    //根据m_value的值计算每次旋转度数
     double degRotate =  (360.0 - m_startAngle - m_endAngle)/(m_maxValue - m_minValue)*(m_value - m_minValue);  //*********@********//
 
     //画指针
-    painter->rotate(degRotate);                                 //顺时针旋转坐标系统
+    painter->rotate(degRotate); //旋转                           //顺时针旋转坐标系统
     QRadialGradient haloGradient(0, 0, 60, 0, 0);               //辐射渐变
     haloGradient.setColorAt(0, QColor(60,60,60));
     haloGradient.setColorAt(1, QColor(160,160,160));
