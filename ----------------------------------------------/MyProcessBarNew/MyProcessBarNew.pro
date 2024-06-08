@@ -10,11 +10,11 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    mytextedit.cpp \
+    myprobar.cpp \
     mywidget.cpp
 
 HEADERS += \
-    mytextedit.h \
+    myprobar.h \
     mywidget.h
 
 FORMS += \

@@ -16,10 +16,6 @@ class MyWidget : public QWidget
 public:
     MyWidget(QWidget *parent = nullptr);
     ~MyWidget();
-protected:
-    void keyPressEvent(QKeyEvent* event)override;  //键盘按下事件
-    //void keyReleaseEvent(QKeyEvent* event)override; //键盘释放事件
-
 
 private:
     Ui::MyWidget *ui;

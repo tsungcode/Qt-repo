@@ -10,20 +10,12 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    mainwidget.cpp \
-    paintwidget.cpp
+    mywidget.cpp
 
 HEADERS += \
-    mainwidget.h \
-    paintwidget.h
-
-FORMS += \
-    mainwidget.ui
+    mywidget.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-RESOURCES += \
-    painter.qrc

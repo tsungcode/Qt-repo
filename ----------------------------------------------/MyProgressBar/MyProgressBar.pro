@@ -10,9 +10,11 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
+    myprobar.cpp \
     mywidget.cpp
 
 HEADERS += \
+    myprobar.h \
     mywidget.h
 
 FORMS += \
