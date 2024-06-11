@@ -60,18 +60,18 @@ void MyWidget ::drawScaleNum(QPainter *painter)
     painter->setPen(QPen(QColor(255,255,255)));
     QFontMetricsF fm(this->font());
     int radius = 200;
-    int r=(int)(radius*0.8);  //半径160处画文字
+    int r=(int)(radius*0.8);      //半径160处绘制文字
     int Angle=45;
     int gap = (360-Angle*2) / 10;  //间隔27度
     for(int i=0; i<=10; i+=1)
     {
-        int angle = 90+Angle+gap*i;                                 //角度,每隔10格子画一个刻度值
-        float angleArc =( angle % 360) * M_PI / 180;                //转换为弧度
-        int x = (r)*cos(angleArc);
+        int angle = 90+Angle+gap*i;                        //角度,每隔10格子画一个刻度值
+        float angleArc =( angle % 360) * M_PI / 180;       //角度转换为弧度   再解释:弧度=角度×π÷180°
+        int x = (r)*cos(angleArc);                //求圆或圆弧上点的坐标 X=Rcos(θ),Y=Rsin(θ)  解释：θ 是用弧度，R是半径
         int y = (r)*sin(angleArc);
         QString value =QString( "%1" ).arg(i*5);                    //*********@********//
         //字体大小及位置要微调
-        int h = fm.size(Qt::TextSingleLine,value).height();
+        int h = fm.size(Qt::TextSingleLine,value).height();    //参数：Qt::TextSingleLine忽略换行符
         x = x -10;
         y = y + h/2;
         painter->drawText(QPointF(x, y),value);
@@ -154,7 +154,7 @@ void MyWidget::drawNumericValue(QPainter *painter)
     QString str=" ";
     str=str.number(m_value,'g',4);                                //*********@********//
     QFontMetricsF fm(font());
-    double w = fm.size(Qt::TextSingleLine,str).width();
+    double w = fm.size(Qt::TextSingleLine,str).width();           //参数：Qt::TextSingleLine忽略换行符
     QFont font("times", 40);
     painter->setFont(font);
     painter->setPen(Qt::lightGray);
