@@ -34,11 +34,11 @@ void MyWidget::on_m_btnOpenSerialport_clicked(bool checked)
         //设置要打开的串口
         this->serialport->setPortName(ui->m_cobSeriport->currentText());//当前选中的串口
         //设置波特率
-        this->serialport->setBaudRate(ui->m_CobBaud->currentText().toInt());
+        this->serialport->setBaudRate(ui->m_cobBaud->currentText().toInt());
         //设置停止位
         this->serialport->setStopBits(QSerialPort::StopBits(ui->m_cobStop->currentText().toInt()));
         //设置数据位
-        this->serialport->setDataBits(QSerialPort::DataBits(ui->m_cobStop->currentText().toInt()));
+        this->serialport->setDataBits(QSerialPort::DataBits(ui->m_cobData->currentText().toInt()));
         //设置校验位
         switch (ui->m_cobParity->currentIndex())
         {
@@ -78,7 +78,7 @@ void MyWidget::on_m_btnOpenSerialport_clicked(bool checked)
         }
         //打开成功
         ui->m_cobSeriport->setDisabled(true);
-        ui->m_CobBaud->setDisabled(true);
+        ui->m_cobBaud->setDisabled(true);
         ui->m_cobData->setDisabled(true);
         ui->m_cobParity->setDisabled(true);
         ui->m_cobStop->setDisabled(true);
