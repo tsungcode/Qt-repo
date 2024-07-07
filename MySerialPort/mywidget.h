@@ -25,6 +25,8 @@ private slots:
 
     void on_m_btnSend_clicked();
 
+    void on_m_btnClearn_clicked();
+
 private:
     Ui::MyWidget *ui;
     QSerialPort *serialport; //
